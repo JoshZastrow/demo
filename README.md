@@ -35,7 +35,7 @@ output:
 
 ## To run without bug:
 
-delete *** "slim_handler": True *** from zappa_settings.json
+delete **"slim_handler": True** from zappa_settings.json
 
 ```(appEnv) $ zappa undeploy dev ```
 
