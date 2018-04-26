@@ -3,14 +3,14 @@
 ```$ cd demo```
 
 #### Initiate Virtual Environment (Windows below, else source myEnv/Scripts/activate)
-```$ myEnv\Scripts\activate.bat```
+```$ appEnv\Scripts\activate.bat```
 
 ```$ python -V``` <- should be python 3.6
 
 #### if the environment doesn't work:
-```$ python -m venv myEnv``` 
+```$ python -m venv appEnv``` 
 
-```(myEnv) $ python -m pip install pip==9.0.1 flask zappa ```
+```(appEnv) $ python -m pip install pip==9.0.1 flask zappa ```
 
 #### test locally
 cmd window 1:
@@ -27,12 +27,16 @@ output:
 
 #### deploy
 
-``` zappa deploy dev ```
+```(appEnv) $ zappa deploy dev ```
+
+#### Test (Where Bug Occurs)
+
+```(appEnv) $ curl <insert deployed lambda handle> ```
 
 ## To run without bug:
 
 delete *** "slim_handler": True *** from zappa_settings.json
 
-```$ zappa undeploy dev ```
+```(appEnv) $ zappa undeploy dev ```
 
-```$ zappa deploy dev ```
+```(appEnv) $ zappa deploy dev ```
